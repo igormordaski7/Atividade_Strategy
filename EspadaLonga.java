@@ -9,9 +9,8 @@ public class EspadaLonga implements Arma {
 
         double dano = danoBase;
 
-        // Chance de sangramento
         Random random = new Random();
-        if (random.nextInt(100) < 30) { // 30% chance
+        if (random.nextInt(100) < 30) { 
             System.out.println("Efeito especial: Corte Profundo! " + alvo.getNome() + " está sangrando!");
             alvo.aplicarEfeito(new Sangramento(5, 3)); // dano 5 por 3 turnos
         }

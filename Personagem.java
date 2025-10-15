@@ -7,6 +7,10 @@ public abstract class Personagem {
     protected double inteligencia;
     protected Arma armaEquipada;
 
+    protected boolean atordoado = false;
+    protected int turnosAtordoado = 0;
+    protected boolean desprevenido = false;
+
     public Personagem(String nome) {
         this.nome = nome;
     }
@@ -26,6 +30,7 @@ public abstract class Personagem {
 
     public void receberDano(double dano) {
         vida -= dano;
+        if (vida < 0) vida = 0;
         System.out.println(nome + " recebeu " + dano + " de dano. Vida atual: " + vida);
     }
 
@@ -33,11 +38,35 @@ public abstract class Personagem {
         efeito.aplicar(this);
     }
 
+    public boolean estaVivo() {
+        return vida > 0;
+    }
+
     public String getNome() {
         return nome;
     }
 
-    public boolean estaVivo() {
-        return vida > 0;
+    public boolean isAtordoado() {
+        return atordoado;
+    }
+
+    public void setAtordoado(boolean atordoado) {
+        this.atordoado = atordoado;
+    }
+
+    public int getTurnosAtordoado() {
+        return turnosAtordoado;
+    }
+
+    public void setTurnosAtordoado(int turnos) {
+        this.turnosAtordoado = turnos;
+    }
+
+    public boolean isDesprevenido() {
+        return desprevenido;
+    }
+
+    public void setDesprevenido(boolean desprevenido) {
+        this.desprevenido = desprevenido;
     }
 }

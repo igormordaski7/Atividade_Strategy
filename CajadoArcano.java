@@ -5,7 +5,7 @@ public class CajadoArcano implements Arma {
     public void atacar(Personagem atacante, Personagem alvo) {
         System.out.println(atacante.getNome() + " lança uma Bola de Fogo com o Cajado Arcano!");
         System.out.println("Efeito especial: Queimadura!");
-        alvo.aplicarEfeito(new Queimadura(10, 2)); // 10 de dano por 2 turnos
+        alvo.aplicarEfeito(new Queimadura(10, 2)); 
         alvo.receberDano(danoBase);
     }
 

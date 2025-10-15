@@ -3,14 +3,10 @@ public class Main {
         Guerreiro guerreiro = new Guerreiro("Thorin");
         Mago mago = new Mago("Merlin");
 
-        Arma espada = new EspadaLonga();
-        Arma cajado = new CajadoArcano();
+        guerreiro.equiparArma(new MachadoDeGuerra());
+        mago.equiparArma(new CajadoArcano());
 
-        guerreiro.equiparArma(espada);
-        mago.equiparArma(cajado);
-
-        System.out.println("\n--- Início da Batalha ---\n");
-        guerreiro.atacar(mago);
-        mago.atacar(guerreiro);
+        Batalha batalha = new Batalha(guerreiro, mago);
+        batalha.iniciar();
     }
 }
